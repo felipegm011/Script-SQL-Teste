@@ -1,0 +1,58 @@
+select 
+	IdCliente,Nome,Sexo,Data,Peso -- campos da tabela
+from cliente;	-- nome da tabela
+
+-- selecionando tudo de uma tabela
+
+select * from tabela
+
+-- selecionando com condições
+
+select nome from cliente where id = x
+
+-- selecionando por intervalos entre x and y
+
+select valor from cliente where valor between 3 and 4
+
+-- fazendo busca na tabela pela letra do nome
+
+select nome from cliente where nome like '%a'
+
+-- consulta pelo numero de teleone o outra coisa qualquer
+
+select nome,idade, sexo,endereço from cliente where telefore ou etc.. ='8888-8888'
+
+-- consulta usando a função CAunt E AND 
+
+select count(id pedido ou etc..) quantped from pedido where dataa = '2019/10/01' and horaped >='16:50:00' and hora ped <= '17:00:00'
+
+-- consulta usando o operador or QUE SIGNIFICA OU
+
+select nome,idade, sexo,endereço from cliente where telefore ou etc.. ='8888-8888'or =telefone ou etc... ='2121-8888'
+
+-- consulta para retornar os clientes que estiverem com telefone vazio
+
+select nome,idade, sexo,endereço from cliente where telefore is null
+
+-- consulta para retornar os clientes que não estão com o campo telefone vazio
+
+select nome,idade, sexo,endereço from cliente where telefore is null
+
+-- selecionan produtos com o intervalos
+
+select id,descrição from prouto where valor between 20 and 30
+
+-- DESATIVANDO CHAVE PRIMARYA
+SET FOREIGN_KEY_CHECKS=0;
+
+--ATIVANDO CHAVE PRIMARIA
+	
+SET FOREIGN_KEY_CHECKS=TRUE;
+
+
+
+
+
+
+
+

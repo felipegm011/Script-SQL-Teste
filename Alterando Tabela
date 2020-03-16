@@ -1,0 +1,87 @@
+-- adicionando coluna na tabela
+
+alter table tabela add email VARCHAR(50)
+
+-- removendo coluna da tabela
+
+alter table tabela drop column email 
+
+-- modificando tipo de dados de uma coluna
+
+alter table tabela modify email VARCHAR(100)
+
+-- excluindo toda tabela
+
+drop table tabela
+
+-- atualizando tabela
+
+update tabela set coluna = 'novo valor' where id = x
+
+-- deletando linha da tabela
+
+delete from tabela where id = x
+
+-- deletando todos os registros da tabeal
+
+delete from tabela
+
+-- deletando mais de um itende uma vez
+
+delete from tabela where id in(x,y,z)
+
+alter table tabela add primary key (codigo); -- adicionando chave primaria na tabela
+
+alter table tabela drop column salario -- deletando coluna da tabela
+
+alter table tabela add nivel varchar(40) not null -- adicionando coluna na tabela
+
+alter table tabela add constraint nivel check (nivel in ('junior','pleno','senior')) -- adiconando restrição no campo
+
+use teste;
+alter table funcionario add primary key (codigo); -- adicionando chave primaria na tabela
+
+-- alter table funcionario drop column salario -- deletando coluna da tabela
+
+-- alter table funcionario add nivel varchar(40) not null -- adicionando coluna na tabela
+
+-- alter table funcionario add constraint nivel check (nivel in ('junior','pleno','senior')) -- adiconando restrição no campo
+
+-- adicionando coluna na tabela
+alter table paciente add dataa date not null; 
+-- alterando tipo do campo
+alter table paciente modify cpf char(11)
+-- adicionando chave primaria na tabela
+alter table paciente add primary key(codigo)
+-- adicionando chave estrangeira na tabela
+alter table paciente add constraint est foreign key(codClinica) references clinica(codigo)
+-- alterando nome de coluna da tabela
+alter table paciente change dataa dtnasc date
+-- exluciondo coluna da tabela
+alter table paciente drop column dtnasc
+-- renomeando a tabela
+rename table paciente to hospital
+-- adicionando valor padrão a tabela
+alter table hospital add planosaude varchar(20) DEFAULT 'GEAP' not null
+-- adicionando uma retrição de valores na tabela
+alter table hospital add constraint aaa check (planosaude in('A','b','c'))
+-- excluindo tabela
+drop table hospital
+-- excluindo banco
+drop database teste
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

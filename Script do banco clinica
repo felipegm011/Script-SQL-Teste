@@ -1,0 +1,34 @@
+ -- create database nome banco;
+use nome banco;
+
+create table paciente(
+	codigo int not null,
+    nome varchar(80) not null,
+    cpf char(12) not null,
+    data_nasc date,
+    sexo char(1),
+    plano_saude varchar(20),
+    primary key (codigo),
+    unique (cpf),
+    check (sexo in ('M','F'))
+    );
+    
+create table medico(
+	crm varchar(15) not null,
+    nome varchar(40) not null,
+    sexo char(1),
+    especialidade varchar(20) default 'clinico',
+    primary key(crm),
+    check (especialidade in ('otorrino','cardiologista','clinico')),
+    check (sexo in ('M','F'))
+    );
+    
+create table consulta(
+	codmedico varchar(15) not null,
+    codpaciente int not null,
+    dataconsulta date,
+    primary key(codmedico,codpaciente), -- os dois campos vão ser as chaves estrangeiras e vão 
+    -- receber o valor das chaves primairas das outras tabelas os tipos de dados devem estar iguais
+    foreign key(codmedico) references medico (crm), 
+    foreign key(codpaciente) references paciente (codigo) -- on delete restrict essa função não permite deletar campos onde a chave primary estiver referenciada
+	);

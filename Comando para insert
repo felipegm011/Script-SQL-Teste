@@ -1,0 +1,31 @@
+-- insert em tabela oedecendo a ordem dos campos
+
+insert into cliente
+(
+	Nome
+	,Sexo
+	,Data
+	,Peso
+
+)
+	value ('João','M','1995-06-21',95.4);
+
+-- inser em mais de um campo
+
+insert into telefone
+(
+	
+	Ddd
+	,numero
+	,Idcliente
+
+)
+	values 	('083','988885555',1),
+			('083','988889999',2),
+            ('083','988880000',3),
+            ('083','988881111',4);
+
+
+create table produtos(idproduto int not null auto_increment,
+						descricao varchar(50) not null,
+						
